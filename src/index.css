@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 10%;
+    --foreground: 240 5% 90%;
+
+    --card: 240 10% 13%;
+    --card-foreground: 240 5% 90%;
+
+    --popover: 240 10% 13%;
+    --popover-foreground: 240 5% 90%;
+
+    --primary: 160 25% 70%;
+    --primary-foreground: 240 10% 10%;
+
+    --secondary: 240 5% 18%;
+    --secondary-foreground: 240 5% 90%;
+
+    --muted: 240 5% 18%;
+    --muted-foreground: 240 5% 50%;
+
+    --accent: 160 25% 70%;
+    --accent-foreground: 240 10% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 5% 18%;
+    --input: 240 5% 18%;
+    --ring: 160 25% 70%;
+
+    --radius: 0rem;
+
+    --sidebar-background: 240 10% 10%;
+    --sidebar-foreground: 240 5% 90%;
+    --sidebar-primary: 160 25% 70%;
+    --sidebar-primary-foreground: 240 10% 10%;
+    --sidebar-accent: 240 5% 18%;
+    --sidebar-accent-foreground: 240 5% 90%;
+    --sidebar-border: 240 5% 18%;
+    --sidebar-ring: 160 25% 70%;
+
+    --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Geist Mono', ui-monospace, monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .section-label {
+    @apply font-mono text-xs text-muted-foreground uppercase tracking-widest;
+  }
+
+  .section-divider {
+    @apply border-b border-border;
+  }
+
+  .hover-shift {
+    @apply transition-transform duration-200;
+  }
+
+  .hover-shift:hover {
+    transform: translateY(2px);
+  }
+
+  .cert-card {
+    @apply p-4 border border-border text-sm transition-colors duration-200;
+  }
+
+  .cert-card:hover {
+    border-color: hsl(var(--primary));
+  }
+}
